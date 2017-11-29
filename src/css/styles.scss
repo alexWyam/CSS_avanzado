@@ -1,0 +1,159 @@
+// FIRS REALES 
+// STARTED BY alexWyam 
+// ON 2017/11/29
+
+/*
+COLOURS -->
+azul cielo => 009de2
+azul oscuro => 006490
+blanco => fff
+-----------------------
+STYLES GUIDE:
+0. VARIABLES 
+1. RESET
+2. NAVS
+3. MEDIAQUERY
+-----------------
+*/
+
+
+/* -------- 0. VARIABLES -------- */
+$blue1: #009de2;
+$blue2: #006490;
+$blue3: #00d7fe;
+
+$white: #fff;
+
+
+/* -------- 1. RESET -------- */
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+    margin: 0 15px;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+// Defines Box Model
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+  html {
+    box-sizing: border-box;
+  }
+
+/* --------- 2. NAVS ----------- */
+.navbar {
+    height: 60px;
+    background: $blue1;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    a {
+        position: relative;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        text-decoration: none;
+        text-align: center;
+        border-right: 2px solid $white;
+        font: 16px 'arial';
+        &.active::after {
+            content: '';
+            height: 5px;
+            width: 80%;
+            background: $blue2;
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+        }
+    }
+    &.type2 {
+        background: $blue2;
+        a.active::after {
+            content: '';
+            background: $blue1;
+        }
+    }
+    &.type3 {
+        background: $white;
+        border-bottom: 5px solid $blue2;
+        a {
+            color: $blue1;
+            &.active::after {
+                content: '';
+                background: $blue1;
+                bottom: -5px;
+            }
+        }
+    }
+    &.type4 {
+        background: transparent;
+        a {
+            color: $white;
+            background: $blue2;
+            border-right-width: 35px;
+            overflow: hidden;
+            &.active {
+                background: $blue3;
+                &::after {
+                    content: '';
+                    width: 30px;
+                    height:30px;
+                    position: absolute;
+                    top: -15px;
+                    right: -15px;
+                    bottom: auto;
+                    left: auto;
+                    transform: rotate(45deg);
+                }
+            }
+                
+        }
+    }
+}
